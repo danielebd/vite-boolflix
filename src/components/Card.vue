@@ -1,5 +1,6 @@
 
 <script>
+import { store } from '../store';
 //esportare il contenuto del componente in modo da poterlo includere in altri componenti
 export default {
     //nome componente
@@ -10,7 +11,12 @@ export default {
         titleOv: String,
         lingua: String,
         voto: String
-    }
+    },
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 
@@ -19,9 +25,13 @@ export default {
     <li>
         <div>Titolo: {{ title }}</div>
         <div>Titolo Originale: {{ titleOv }}</div>
-        <div>Lingua: {{ lingua }}</div>
+        <div>Lingua: <img :src="lingua" alt=""></div>
         <div>Voto: {{ voto }}</div>
     </li>
 </template>
-
-<style lang="scss" scoped></style>
+    
+<style lang="scss" scoped>
+    img {
+        width: 20px;
+    }
+</style>

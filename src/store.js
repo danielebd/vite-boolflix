@@ -6,5 +6,6 @@ importandoli nel componente in cui serve manipolarli e sfruttarli */
 export const store = reactive({
     searchKey: '',
     movies: [],
-    apiKey: '840eca309dd4414344136d1eeb75d1d2'
+    apiKey: '840eca309dd4414344136d1eeb75d1d2',
+    language: []
 })

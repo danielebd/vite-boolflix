@@ -44,6 +44,10 @@ export default {
         .then((response) => {
           console.log(response);
           this.store.movies = response.data.results;
+          console.log(response.data.results);
+          
+          
+          console.log(this.store.language);
         })
     }
   },
