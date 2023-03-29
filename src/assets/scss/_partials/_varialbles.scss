@@ -1,0 +1,7 @@
+$primary: #333;
+$secondary: #3323;
+
+::root {
+    --primary: $primary;
+    --secondary: $secondary;
+}
