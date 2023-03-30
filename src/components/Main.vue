@@ -19,7 +19,29 @@ export default {
             store
         }
     },
-
+    methods: {
+        flag(flag){
+            if(flag === 'en'){
+                return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png'
+                
+            }
+            else if(flag === 'it') {
+                return 'https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/255px-Flag_of_Italy.svg.png'
+            }
+            else if(flag === 'fr') {
+                return 'https://www.bandiere-mondo.it/data/flags/w580/fr.png'
+            }
+            else if(flag === 'de') {
+                return 'https://www.bandiere-mondo.it/data/flags/w580/de.png'
+            }
+            else if(flag === 'ko') {
+                return 'https://www.bandiere-mondo.it/data/flags/w580/kr.webp'
+            }
+            else {
+                return ''
+            }
+        }
+    }
     
 }
 
@@ -29,7 +51,7 @@ export default {
     <!-- lista movies trovati -->
     <ul>
         <Card v-for="element in store.movies.slice(0, 10)" :title="element.title" :titleOv="element.original_title"
-            :lingua="(element.original_language === 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png' : '')"
+            :lingua="flag(element.original_language)"
             :voto="(element.vote_average === 0) ? 'undefined' : element.vote_average" />
     </ul>
 </template>
