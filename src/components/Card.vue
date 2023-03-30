@@ -10,7 +10,8 @@ export default {
         title: String,
         titleOv: String,
         lingua: String,
-        voto: String
+        voto: String,
+        image: String
     },
     data() {
         return {
@@ -23,6 +24,7 @@ export default {
 <template>
     <!-- info movie -->
     <li>
+        <img :src="'https://image.tmdb.org/t/p/original' + image" alt="alt">
         <div>Titolo: {{ title }}</div>
         <div>Titolo Originale: {{ titleOv }}</div>
         <div>Lingua: <img :src="lingua" alt=""></div>
