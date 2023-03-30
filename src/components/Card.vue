@@ -32,8 +32,11 @@ export default {
         </div>
         <div>Titolo: {{ title }}</div>
         <div>Titolo Originale: {{ titleOv }}</div>
-        <div>Lingua: <img class="icon" :src="lingua" alt=""></div>
+        <div>Lingua: <img class="flag" :src="lingua" alt=""></div>
         <div>Voto: {{ voto }}</div>
+        <font-awesome-icon icon="fa-solid fa-star" v-for="n in voto"/>
+        <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - voto"/>
+
     </li>
 </template>
     
@@ -48,7 +51,10 @@ export default {
     }
 } */
 
-.icon {
+.flag {
     width: 20px;
+}
+.fa-star {
+    color: rgb(216, 184, 0);
 }
 </style>
