@@ -24,16 +24,28 @@ export default {
 <template>
     <!-- info movie -->
     <li>
-        <img :src="'https://image.tmdb.org/t/p/original' + image" alt="alt">
+        <div class="img">
+            <img :src="'https://image.tmdb.org/t/p/w185' + image" alt="#poster-non-presente">
+        </div>
         <div>Titolo: {{ title }}</div>
         <div>Titolo Originale: {{ titleOv }}</div>
-        <div>Lingua: <img :src="lingua" alt=""></div>
+        <div>Lingua: <img class="icon" :src="lingua" alt=""></div>
         <div>Voto: {{ voto }}</div>
     </li>
 </template>
     
 <style lang="scss" scoped>
+/* .img {
+    background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+    width: 185px;
+    background-repeat: no-repeat;
+    background-size: contain;
     img {
-        width: 20px;
+        width: 100%;
     }
+} */
+
+.icon {
+    width: 20px;
+}
 </style>

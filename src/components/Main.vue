@@ -78,7 +78,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-img {
-    width: 400px;
-}
+
 </style>
