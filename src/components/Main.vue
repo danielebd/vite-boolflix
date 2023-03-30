@@ -48,12 +48,25 @@ export default {
 </script>
 
 <template>
-    <!-- lista movies trovati -->
-    <ul>
+    <div class="d-flex">
+        <ul>
+            <h3>Movie</h3>
         <Card v-for="element in store.movies.slice(0, 10)" :title="element.title" :titleOv="element.original_title"
             :lingua="flag(element.original_language)"
             :voto="(element.vote_average === 0) ? 'undefined' : element.vote_average" />
+            
     </ul>
+    <ul>
+        <h3>TV Series</h3>
+        <Card v-for="element in store.series.slice(0, 10)" :title="element.name" :titleOv="element.original_name"
+            :lingua="flag(element.original_language)"
+            :voto="(element.vote_average === 0) ? 'undefined' : element.vote_average" />
+            
+    </ul>
+    </div>
+    <!-- lista movies trovati -->
+    
+
 </template>
 
 <style lang="scss" scoped></style>

@@ -26,7 +26,7 @@ export default {
     }
   },
 
-  
+
   methods: {
     callMovie() {
 
@@ -44,10 +44,28 @@ export default {
         .then((response) => {
           console.log(response);
           this.store.movies = response.data.results;
-          console.log(response.data.results);
-          
-          
-          console.log(this.store.language);
+
+        })
+    },
+    callSerie() {
+
+      //chiamata ad axios
+      axios.get('https://api.themoviedb.org/3/search/tv',
+        {
+          //parametri da includere nell'indirizzo sopra digitato
+          params: {
+            api_key: this.store.apiKey,
+            query: this.store.searchKey
+          }
+        })
+
+        //azione che da compiere una volta fatta la chimata ad axios
+        .then((response) => {
+          console.log(response);
+          this.store.series = response.data.results;
+
+
+
         })
     }
   },
@@ -56,14 +74,14 @@ export default {
 
     //la funzione verrà inizializzata nel life cicle Created
     this.callMovie()
+    this.callSerie()
   }
 }
 </script>
 
 <template>
-
   <!-- il componente App invocherà la funzione callMovie per il figlio Header  -->
-  <Header @search="callMovie" />
+  <Header @searchMovie="callMovie" @searchSerie="callSerie" />
   <Main />
 </template>
 

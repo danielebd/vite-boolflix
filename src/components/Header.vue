@@ -19,7 +19,7 @@ export default {
 <template>
     <div>
         <!-- form di ricerca film/ emit(azione chimata al padre App) -->
-        <form action="" method="get" @submit.prevent="$emit('search')">
+        <form action="" method="get" @submit.prevent="$emit('searchMovie'), $emit('searchSerie')">
             <input v-model="store.searchKey" type="text" placeholder="search movie">
             <input  class="btn btn-primary" type="submit" value="Submit">
         </form>
