@@ -41,7 +41,9 @@ export default {
                 return ''
             }
         }
-    }
+    },
+    
+    
     
 }
 
@@ -56,8 +58,7 @@ export default {
             :title="element.title" 
             :titleOv="element.original_title"
             :lingua="flag(element.original_language)"
-            :voto="(element.vote_average === 0) ? 'undefined' 
-            :element.vote_average" />
+            :voto="(Math.ceil(element.vote_average / 2))" />
             
     </ul>
     <ul>
@@ -67,8 +68,7 @@ export default {
             :title="element.name" 
             :titleOv="element.original_name"
             :lingua="flag(element.original_language)"
-            :voto="(element.vote_average === 0) ? 'undefined' 
-            :element.vote_average" />
+            :voto="(Math.ceil(element.vote_average / 2))" />
             
     </ul>
     </div>

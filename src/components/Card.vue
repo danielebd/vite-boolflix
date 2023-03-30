@@ -10,14 +10,17 @@ export default {
         title: String,
         titleOv: String,
         lingua: String,
-        voto: String,
-        image: String
+        image: String,
+        voto: Number
     },
     data() {
         return {
             store
         }
     },
+    
+    
+    
 }
 </script>
 
