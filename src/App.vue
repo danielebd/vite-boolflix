@@ -75,7 +75,9 @@ export default {
     //la funzione verrà inizializzata nel life cicle Created
     this.callMovie()
     this.callSerie()
-  }
+  },
+
+  
 }
 </script>
 

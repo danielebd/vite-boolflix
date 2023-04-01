@@ -1,5 +1,6 @@
 
 <script>
+
 //inclusione del componente figlio nel componente
 import Card from './Card.vue';
 
@@ -20,28 +21,13 @@ export default {
         }
     },
     methods: {
-        flag(flag){
-            if(flag === 'en'){
-                return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png'
-                
-            }
-            else if(flag === 'it') {
-                return 'https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/255px-Flag_of_Italy.svg.png'
-            }
-            else if(flag === 'fr') {
-                return 'https://www.bandiere-mondo.it/data/flags/w580/fr.png'
-            }
-            else if(flag === 'de') {
-                return 'https://www.bandiere-mondo.it/data/flags/w580/de.png'
-            }
-            else if(flag === 'ko') {
-                return 'https://www.bandiere-mondo.it/data/flags/w580/kr.webp'
-            }
-            else {
-                return ''
-            }
-        }
+        
     },
+    computed: {
+    results() {
+      return [...this.store.movies, ...this.store.series]
+    }
+  }
     
     
     
@@ -50,27 +36,27 @@ export default {
 </script>
 
 <template>
+    <ul>
+            <h3>Results</h3>
+            <Card v-for="element in results.slice(0, 20)" 
+            :image="element.poster_path"
+            :info="element" />
+            
+        </ul>
     <div class="d-flex">
         <ul>
             <h3>Movie</h3>
-        <Card v-for="element in store.movies.slice(0, 10)" 
+            <Card v-for="element in store.movies.slice(0, 10)" 
             :image="element.poster_path"
-            :title="element.title" 
-            :titleOv="element.original_title"
-            :lingua="flag(element.original_language)"
-            :voto="(Math.ceil(element.vote_average / 2))" />
+            :info="element"  />
             
-    </ul>
-    <ul>
-        <h3>TV Series</h3>
-        <Card v-for="element in store.series.slice(0, 10)"
+        </ul>
+        <ul>
+            <h3>TV Series</h3>
+            <Card v-for="element in store.series.slice(0, 10)"
             :image="element.poster_path"
-            :title="element.name" 
-            :titleOv="element.original_name"
-            :lingua="flag(element.original_language)"
-            :voto="(Math.ceil(element.vote_average / 2))" />
-            
-    </ul>
+            :info="element"  />  
+        </ul>
     </div>
     <!-- lista movies trovati -->
     
