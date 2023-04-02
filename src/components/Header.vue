@@ -17,13 +17,40 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div id="container">
+        <h1>Boolflix</h1>
         <!-- form di ricerca film/ emit(azione chimata al padre App) -->
-        <form action="" method="get" @submit.prevent="$emit('searchMovie'), $emit('searchSerie')">
-            <input v-model="store.searchKey" @keyup.enter="$emit('searchMovie')" type="text" placeholder="search movie">
-            <input  class="btn btn-primary" type="submit" value="Submit">
+        <form class="d-flex align-items-center" action="" method="get" @submit.prevent="$emit('searchMovie'), $emit('searchSerie')">
+            <input class="form-control rounded-0" v-model="store.searchKey" @keyup.enter="$emit('searchMovie')" type="text" placeholder="search movie">
+            <input class="btn btn-primary rounded-0" type="submit" value="Search">
         </form>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+    #container {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        vertical-align: middle;
+        
+        h1{
+            color: red;
+            cursor: pointer;
+        }
+
+        .my-btn{
+            background-color: white;
+            outline-color: white;
+            border: white;
+        }
+
+        input {
+            height: 40px;
+            background-color: white;
+            color: black;
+            
+        }
+    }
+
+</style>

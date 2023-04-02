@@ -77,14 +77,20 @@ export default {
     this.callSerie()
   },
 
-  
+
 }
 </script>
 
 <template>
-  <!-- il componente App invocherà la funzione callMovie per il figlio Header  -->
-  <Header @searchMovie="callMovie" @searchSerie="callSerie" />
-  <Main />
+  <div id="container">
+    <!-- il componente App invocherà la funzione callMovie per il figlio Header  -->
+    <Header @searchMovie="callMovie" @searchSerie="callSerie" />
+    <Main />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#container {
+  max-width: 1040px;
+  margin: 0 auto;}
+</style>

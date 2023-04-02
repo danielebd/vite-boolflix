@@ -21,48 +21,46 @@ export default {
         }
     },
     methods: {
-        
+
     },
     computed: {
-    results() {
-      return [...this.store.movies, ...this.store.series]
+        results() {
+            return [...this.store.movies, ...this.store.series]
+        }
     }
-  }
-    
-    
-    
+
+
+
 }
 
 </script>
 
 <template>
-    <ul>
-            <h3>Results</h3>
-            <Card v-for="element in results.slice(0, 20)" 
-            :image="element.poster_path"
-            :info="element" />
-            
-        </ul>
-    <div class="d-flex">
-        <ul>
-            <h3>Movie</h3>
-            <Card v-for="element in store.movies.slice(0, 10)" 
-            :image="element.poster_path"
-            :info="element"  />
-            
-        </ul>
-        <ul>
-            <h3>TV Series</h3>
-            <Card v-for="element in store.series.slice(0, 10)"
-            :image="element.poster_path"
-            :info="element"  />  
-        </ul>
-    </div>
-    <!-- lista movies trovati -->
-    
+    <h3>Results</h3>
+    <ul class="d-flex flex-wrap ">
+        <Card v-for="element in results.slice(0, 20)" :image="element.poster_path" :info="element" />
 
+    </ul>
+    <!-- <div class="d-flex">
+            <ul>
+                <h3>Movie</h3>
+                <Card v-for="element in store.movies.slice(0, 10)" 
+                :image="element.poster_path"
+                :info="element"  />
+            
+            </ul>
+            <ul>
+                <h3>TV Series</h3>
+                <Card v-for="element in store.series.slice(0, 10)"
+                :image="element.poster_path"
+                :info="element"  />  
+            </ul>
+        </div> -->
+    <!-- lista movies trovati -->
 </template>
 
 <style lang="scss" scoped>
-
+h3 {
+    color: white;
+}
 </style>
