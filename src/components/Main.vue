@@ -41,22 +41,7 @@ export default {
         <Card v-for="element in results.slice(0, 20)" :image="element.poster_path" :info="element" />
 
     </ul>
-    <!-- <div class="d-flex">
-            <ul>
-                <h3>Movie</h3>
-                <Card v-for="element in store.movies.slice(0, 10)" 
-                :image="element.poster_path"
-                :info="element"  />
-            
-            </ul>
-            <ul>
-                <h3>TV Series</h3>
-                <Card v-for="element in store.series.slice(0, 10)"
-                :image="element.poster_path"
-                :info="element"  />  
-            </ul>
-        </div> -->
-    <!-- lista movies trovati -->
+    
 </template>
 
 <style lang="scss" scoped>
