@@ -18,7 +18,7 @@ export default {
 
 <template>
     <div id="container">
-        <h1>Boolflix</h1>
+        <h1>BoolFlix</h1>
         <!-- form di ricerca film/ emit(azione chimata al padre App) -->
         <form class="d-flex align-items-center" action="" method="get" @submit.prevent="$emit('searchMovie'), $emit('searchSerie')">
             <input class="my-text form-control" v-model="store.searchKey" @keyup.enter="$emit('searchMovie')" type="text" placeholder="search movie">
