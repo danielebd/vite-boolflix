@@ -89,6 +89,7 @@ li {
     max-width: calc(100% / 3 - 20px);
     margin: 10px;
     cursor: pointer;
+    
 
 
     article {
@@ -98,6 +99,7 @@ li {
             max-width: 342px;
             img {
                 width: 100%;
+                border-radius: 10px;
             }
 
         }

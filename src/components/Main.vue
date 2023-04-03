@@ -36,7 +36,6 @@ export default {
 </script>
 
 <template>
-    <h3>Results</h3>
     <ul class="d-flex flex-wrap ">
         <Card v-for="element in results.slice(0, 20)" :image="element.poster_path" :info="element" />
 

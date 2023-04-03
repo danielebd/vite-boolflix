@@ -21,8 +21,8 @@ export default {
         <h1>Boolflix</h1>
         <!-- form di ricerca film/ emit(azione chimata al padre App) -->
         <form class="d-flex align-items-center" action="" method="get" @submit.prevent="$emit('searchMovie'), $emit('searchSerie')">
-            <input class="form-control rounded-0" v-model="store.searchKey" @keyup.enter="$emit('searchMovie')" type="text" placeholder="search movie">
-            <input class="btn btn-primary rounded-0" type="submit" value="Search">
+            <input class="my-text form-control" v-model="store.searchKey" @keyup.enter="$emit('searchMovie')" type="text" placeholder="search movie">
+            <input class="my-btn btn btn-primary " type="submit" value="Search">
         </form>
     </div>
 </template>
@@ -31,7 +31,7 @@ export default {
     #container {
         display: flex;
         justify-content: space-between;
-        margin: 30px 0;
+        padding: 30px 0;
         vertical-align: middle;
         
         h1{
@@ -43,12 +43,24 @@ export default {
             background-color: white;
             outline-color: white;
             border: white;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-left: solid 1px;
+
+        }
+
+        .my-text {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            font-weight: bold;
         }
 
         input {
             height: 40px;
             background-color: white;
             color: black;
+            font-weight: bold;
+            border: white;
             
         }
     }
